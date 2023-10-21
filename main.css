@@ -1,0 +1,241 @@
+/* Reset padrão de margens e preenchimento */
+.column .is-four-fifths{
+    height: 100px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: black; /* Adicionando um fundo mais claro */
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .anuncio {
+    position: relative;
+    box-sizing: border-box;
+    color: #ffffff;
+    border: 10px purple;
+    text-align: center;
+    font-family: MuseoSans-500,Arial,Helvetica,sans-serif;
+    margin: 25px 0 4px;
+    font-size: 30px;
+  }
+  
+  .sc-gisBJw.iGsROO {
+    border: 1px solid black; /* Definindo uma borda preta de 1 pixel */
+    color: #333; /* Define a cor do texto como cinza escuro */
+  }
+  
+  /* Estilizando a seção principal */
+  .section {
+    background-color: purple;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  /* Estilizando o título principal */
+  h1 {
+    display: inline;
+    margin: 0; /* Para remover as margens padrão que h1 possui */
+  }
+  .hacktudo{
+    color: #FFF2E7;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Righteous;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .time{
+    color: #6E0AD6;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Righteous;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .atari {
+    color: #8CE563;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Righteous;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .jap {
+    color: #F28000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Righteous;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  /* Estilizando a área de vídeo e botões */
+  .column.is-four-fifths {
+    position: relative;
+    box-sizing: border-box;
+    color: #ffffff;
+    text-align: left;
+    font-family: MuseoSans-500,Arial,Helvetica,sans-serif;
+    margin: 25px 0 4px;
+    font-size: 30px;
+  }
+  
+  video {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .button {
+    width: 80px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .sc-fAjcbJ input[type="checkbox"] {
+    width: 30px; /* Largura desejada */
+    height: 30px; /* Altura desejada */
+  }
+  
+  .sc-fAjcbJ input[type="checkbox"]:checked + label::before {
+    background-color: purple; /* Cor desejada (roxa) */
+  }
+  
+  .alert {
+      background-color: #ffe1bf;
+      color:#333;
+      padding: 10px; /* Adicione preenchimento para dar espaço ao conteúdo */
+  }
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
+  
+  
+  /* Estilizando a área de arquivos */
+  .column {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(173, 37, 37, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 1920px;
+    height: 400px;
+  }
+  
+  
+  
+  /* Estilizando o botão de adicionar arquivo */
+  .upload-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 900px;
+    height: 320px;
+    border: 2px dashed #800080; /* Borda roxa */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+  
+  .upload-button:hover {
+    border-color: #a020a0; /* Cor mais escura no hover */
+  }
+  
+  .image-upload{
+    color:#333
+  }
+  
+  .upload-button .icon {
+    color: #800080; /* Cor roxa */
+    border: #333;
+    width: 500px;
+    height: 500px;
+  }
+  
+  /* Estilizando o botão de parar gravação */
+  #btnStopRecord {
+    background-color: #800080;
+    color: white;
+  }
+  
+  #btnStopRecord:hover {
+    background-color: #a020a0;
+  }
+  
+  /* Estilizando o botão de download */
+  #files a {
+    text-decoration: none;
+    color: #800080; /* Cor roxa */
+    margin-right: 10px;
+  }
+  
+  /* Estilizando o botão "X" para remover imagem */
+  button {
+    background-color: transparent;
+    border: none;
+    color: #800080; /* Cor roxa */
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  
+  button:hover {
+    color: #a020a0; /* Cor mais escura no hover */
+  }
+  
+  #file-input {
+    display: none;
+  }
+  
+  .olx-logo-olx {
+    width: 100px;
+    height: 100px;
+  }
+  /* Estilo para o retângulo */
+.rectangle {
+    width: 250px; /* Largura do retângulo */
+    height: 100px; /* Altura do retângulo */
+    background-color: white; /* Cor de fundo branca */
+    border: 2px solid #333; /* Borda cinza escura */
+    display: inline-block; /* Para manter os retângulos na mesma linha */
+    margin:0
+    
+}
+
+/* Estilo para o texto dentro do retângulo */
+.rectangle p {
+    margin: 0; /* Remover margens internas do parágrafo */
+    padding: 10px; /* Espaçamento interno do texto */
+    color: purple; /* Cor do texto roxa */
+}
+
+.upload-button:hover {
+    border-color: #a020a0; /* Cor mais escura no hover */
+  }
+
+  
+  
