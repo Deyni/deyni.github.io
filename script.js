@@ -1,14 +1,10 @@
 (function () {
-  if (
-    !("mediaDevices" in navigator) ||
-    !("getUserMedia" in navigator.mediaDevices) ||
-    !("MediaRecorder" in window)
-  ) {
-    alert("Camera API ou MediaRecorder não está disponível em seu navegador");
+  if (!("mediaDevices" in navigator) || !("getUserMedia" in navigator.mediaDevices) || !("MediaRecorder" in window)) {
+    alert("Camera API or MediaRecorder is not available in your browser");
     return;
   }
 
-  // elementos da página
+  // elementos pagina
   const video = document.querySelector("#video");
   const btnPause = document.querySelector("#btnPause");
   const btnRecord = document.querySelector("#btnRecord");
@@ -19,18 +15,26 @@
   const canvas = document.querySelector("#canvas");
   const devicesSelect = document.querySelector("#devicesSelect");
 
-  // tamanhos de vídeo
-  const restricoes = {
+  // tamanhos video
+  const constraints = {
     video: {
-      width: { min: 256, ideal: 384, max: 512 },
-      height: { min: 261, ideal: 392, max: 524 },
+      width: {
+        min: 256,
+        ideal: 384,
+        max: 512,
+      },
+      height: {
+        min: 261,
+        ideal: 392,
+        max: 524,
+      },
     },
   };
 
-  // câmera frontal
+  // camera frontal
   let useFrontCamera = true;
 
-  // fluxo de vídeo
+  // video fluxo
   let videoStream;
   let mediaRecorder;
   let recordedChunks = [];
@@ -39,12 +43,13 @@
   let latitude;
   let longitude;
 
-  // inicia a função assíncrona
-  async function inicializeCamera() {
+  // iniciar
+  async function initializeCamera() {
     try {
       const videoStream = await navigator.mediaDevices.getUserMedia({ video: true });
 
-      // Exibe o elemento video imediatamente
+      // Display the video element immediately
+      const video = document.querySelector("#video");
       video.srcObject = videoStream;
 
       if ("geolocation" in navigator) {
@@ -52,33 +57,33 @@
           navigator.geolocation.getCurrentPosition(resolve, reject);
         });
 
-        latitude = position.coords.latitude;
-        longitude = position.coords.longitude;
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
 
         const geoCoordinates = document.createElement("div");
         geoCoordinates.id = "geoCoordinates";
         geoCoordinates.textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
         document.body.appendChild(geoCoordinates);
 
-        // Adicione o estilo para posicionar no topo da tela
-        geoCoordinates.style.position = "fixed";
-        geoCoordinates.style.top = "560px";
-        geoCoordinates.style.left = "7%";
-        geoCoordinates.style.transform = "translateX(-50%)";
+         // Adicione o estilo para posicionar no topo da tela
+      geoCoordinates.style.position = "fixed";
+      geoCoordinates.style.top = "560px";
+      geoCoordinates.style.left = "7%";
+      geoCoordinates.style.transform = "translateX(-50%)";
+      
       } else {
         console.error("Geolocalização não suportada pelo navegador");
       }
     } catch (err) {
-      alert("Não foi possível acessar a câmera");
+      alert("Could not access the camera");
     }
   }
 
-  // iniciar gravação
+  // iniciar gravacao
   btnRecord.addEventListener("click", function () {
     if (mediaRecorder) return;
 
     mediaRecorder = new MediaRecorder(videoStream);
-
     mediaRecorder.ondataavailable = function (event) {
       if (event.data.size > 0) {
         recordedChunks.push(event.data);
@@ -90,18 +95,17 @@
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = "video gravado.webm";
-      a.textContent = "Baixar vídeo";
+      a.download = "recorded-video.webm";
+      a.textContent = "Download Video";
       filesContainer.appendChild(a);
     };
 
     mediaRecorder.start();
-
     btnRecord.classList.add("is-hidden");
     btnStopRecord.classList.remove("is-hidden");
   });
 
-  // parar a gravação
+  // parar gravação
   btnStopRecord.addEventListener("click", function () {
     if (mediaRecorder) {
       mediaRecorder.stop();
@@ -121,13 +125,13 @@
     filesContainer.prepend(img);
   });
 
-  // virar câmera
+  // virar camera
   btnChangeCamera.addEventListener("click", function () {
     useFrontCamera = !useFrontCamera;
-    inicializeCamera();
+    initializeCamera();
   });
 
-  // parar a função de vídeo
+  // parar video
   function stopVideoStream() {
     if (videoStream) {
       videoStream.getTracks().forEach((track) => {
@@ -136,5 +140,5 @@
     }
   }
 
-  inicializeCamera();
+  initializeCamera();
 })();
