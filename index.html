@@ -4,45 +4,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atari</title>
+  <title>Amazônia</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  <link rel="stylesheet" href="main.css">
-  <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet'>
+ 
+  <!-- CSS -->
+  <style>
+    .image-container {
+      position: relative;
+      display: inline-block;
+    }
+  
+    .button-container {
+      position: absolute;
+      top: 0;
+      left: 50px;
+    }
+    
+    .custom-button {
+      width: 105px;
+      height: 105px;
+    }
+    
+    .custom-icon {
+      font-size: 24px;
+    }
+    
+    .video-container {
+      position: absolute;
+      top: -200px;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+    }
+  
+    .video-container video {
+      width: 100%;
+      height: 100%;
+    }
+    .coordinates-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  .text-overlay {
+  position: absolute;
+  top: 12%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  z-index: 2; 
+}
+  </style>
 </head>
 
-<body>
-  <section class="section">
-    <h1 class="hacktudo">Hacktudo</h1>
-      <br>
-      <h1 class="time">Time</h1>
-      <h1 class="atari">Atari</h1>
-      <h1 class="jap">アタリ</h1>
-    <div class="container">
-      <h1 class="anuncio">olx pay</h1>
-      <div class="columns">
-        <div class="column is-four-fifths">
-            <div class="rectangle">
-                <p>Região</p>
-            </div>
-            <div class="rectangle">
-                <p>Categoria</p>
-            </div>
-            <div class="rectangle">
-                <p>Filtros</p>
-            </div>
-            <br><br>
-          <div data-ds-component="DS-TextInput" class="sc-fAjcbJ fiBMtj">
-            <a href = "https://adobeaero.app.link/WEpIcOz9SDb" target="_blank"><img align="center" alt="Atari" height="800" width="370" src="https://a.imagem.app/oKs1Oi.jpeg">
-                <button class="button is-purple">
-                    <span class="icon is-small">
-                      <img src="ar.svg" alt="">
-                    </span>
-                  </button>
-            <div data-ds-component="DS-Flex" class="sc-bdVaJa cHsrIG"></div>
-          </div>
-          <br>
-  </section>
+<body> 
+  <div class="image-container">
+    <div class="video-container">
+      <video autoplay id="video"></video>
+    </div>
+    <img src="design.svg" alt="">
+    <div class="button-container">
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br>
+      <button class="button is-dark custom-button" id="btnTakephoto">
+        <span class="icon is-small custom-icon">
+          <i class="fas fa-camera"></i>
+        </span>
+      </button>
+      <button class="button custom-button" id="btnChangeCamera">
+        <span class="icon custom-icon">
+          <i class="fas fa-sync-alt"></i>
+        </span>
+      </button>
+      <button class="button custom-button" id="btnRecord">
+        <span class="icon is-small custom-icon">
+          <i class="fas fa-video"></i>
+        </span>
+      </button>
+      <button class="button is-danger is-hidden custom-button" id="btnStopRecord">
+        <span class="icon is-small custom-icon">
+          <i class="fas fa-stop"></i>
+        </span>
+      </button>
+    </div>
+    <div class="text-overlay">
+      <img src="foto.svg" alt="" width="60" height="55"> <br>
+      <span class="textonome">Nome: Sam Adam</span> <br>
+      <span class="texto">N° de Matrícula Guarda Florestal: GF20230002</span>
+    </div>
+  </div>
   <canvas class="is-hidden" id="canvas"></canvas>
   <script src="script.js"></script>
 </body>
